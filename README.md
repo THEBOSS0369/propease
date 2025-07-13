@@ -218,8 +218,6 @@ propease/
 2. **Add environment variables** in Vercel dashboard
 3. **Deploy** - Vercel will automatically build and deploy
 
-[![Deploy with Vercel](https://vercel.com/button)]
-
 ### Deploy on Netlify
 
 1. **Connect your repository** to Netlify
@@ -317,5 +315,5 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ---
 
 <div align="center">
-  <strong>Built with ❤️ by the PropEase team</strong>
+  <strong>Built with ❤️</strong>
 </div>
