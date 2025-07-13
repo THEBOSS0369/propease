@@ -31,28 +31,28 @@ const DashboardPage = async () => {
       value: "24",
       change: "+12%",
       icon: Building2,
-      color: "text-blue-600",
+      color: "text-blue-500",
     },
     {
       title: "Monthly Revenue",
       value: "$45,231",
       change: "+8.2%",
       icon: DollarSign,
-      color: "text-green-600",
+      color: "text-green-500",
     },
     {
       title: "Active Tenants",
       value: "18",
       change: "+3",
       icon: Users,
-      color: "text-purple-600",
+      color: "text-purple-500",
     },
     {
       title: "Available Units",
       value: "6",
       change: "-2",
       icon: Key,
-      color: "text-orange-600",
+      color: "text-primary",
     },
   ];
 
@@ -111,9 +111,9 @@ const DashboardPage = async () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#101010] text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="border-b border-gray-800 bg-[#101010]">
+      <header className="border-b border-border bg-background">
         <div className="flex h-16 items-center justify-between px-6">
           <div className="flex items-center gap-4">
             <h1 className="text-2xl font-bold">PropEase Dashboard</h1>
@@ -137,15 +137,15 @@ const DashboardPage = async () => {
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
-            <Card key={index} className="bg-gray-900 border-gray-800">
+            <Card key={index} className="bg-card border-border">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium text-gray-300">
+                <CardTitle className="text-sm font-medium text-muted-foreground">
                   {stat.title}
                 </CardTitle>
                 <stat.icon className={`h-4 w-4 ${stat.color}`} />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-white">
+                <div className="text-2xl font-bold text-foreground">
                   {stat.value}
                 </div>
                 <p className="text-xs text-muted-foreground">
@@ -167,10 +167,10 @@ const DashboardPage = async () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Recent Activity */}
-          <Card className="bg-gray-900 border-gray-800">
+          <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="text-white">Recent Activity</CardTitle>
-              <CardDescription className="text-gray-400">
+              <CardTitle className="text-foreground">Recent Activity</CardTitle>
+              <CardDescription className="text-muted-foreground">
                 Latest updates from your properties
               </CardDescription>
             </CardHeader>
@@ -178,16 +178,20 @@ const DashboardPage = async () => {
               {recentActivity.map((activity, index) => (
                 <div key={index} className="flex items-start space-x-3">
                   <div className="flex-shrink-0">
-                    <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center">
-                      <activity.icon className="h-4 w-4 text-gray-400" />
+                    <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
+                      <activity.icon className="h-4 w-4 text-muted-foreground" />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-white">
+                    <p className="text-sm font-medium text-foreground">
                       {activity.action}
                     </p>
-                    <p className="text-sm text-gray-400">{activity.property}</p>
-                    <p className="text-xs text-gray-500">{activity.time}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {activity.property}
+                    </p>
+                    <p className="text-xs text-muted-foreground/80">
+                      {activity.time}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -195,23 +199,23 @@ const DashboardPage = async () => {
           </Card>
 
           {/* Quick Actions */}
-          <Card className="bg-gray-900 border-gray-800">
+          <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="text-white">Quick Actions</CardTitle>
-              <CardDescription className="text-gray-400">
+              <CardTitle className="text-foreground">Quick Actions</CardTitle>
+              <CardDescription className="text-muted-foreground">
                 Common tasks and shortcuts
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-3">
+            <CardContent className="space-y-4">
               {quickActions.map((action, index) => (
-                <Link key={index} href={action.href}>
-                  <div className="flex items-center p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors cursor-pointer">
-                    <action.icon className="h-5 w-5 text-blue-500 mr-3" />
+                <Link key={index} href={action.href} className="block">
+                  <div className="flex items-center p-4 rounded-lg bg-muted hover:bg-muted/80 transition-colors cursor-pointer mb-2">
+                    <action.icon className="h-5 w-5 text-primary mr-4" />
                     <div>
-                      <p className="text-sm font-medium text-white">
+                      <p className="text-sm font-medium text-foreground">
                         {action.title}
                       </p>
-                      <p className="text-xs text-gray-400">
+                      <p className="text-xs text-muted-foreground">
                         {action.description}
                       </p>
                     </div>
@@ -223,10 +227,10 @@ const DashboardPage = async () => {
         </div>
 
         {/* Quick Navigation */}
-        <Card className="bg-gray-900 border-gray-800">
+        <Card className="bg-card border-border">
           <CardHeader>
-            <CardTitle className="text-white">Navigation</CardTitle>
-            <CardDescription className="text-gray-400">
+            <CardTitle className="text-foreground">Navigation</CardTitle>
+            <CardDescription className="text-muted-foreground">
               Access main sections of your dashboard
             </CardDescription>
           </CardHeader>
