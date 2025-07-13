@@ -218,7 +218,7 @@ propease/
 2. **Add environment variables** in Vercel dashboard
 3. **Deploy** - Vercel will automatically build and deploy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Shreyas-29/propease)
+[![Deploy with Vercel](https://vercel.com/button)]
 
 ### Deploy on Netlify
 
